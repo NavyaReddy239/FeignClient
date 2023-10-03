@@ -1,0 +1,62 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2021.0.4")
+}
+dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+     implementation 'org.apache.logging.log4j:log4j-api:2.18.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.18.0'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+     implementation 'junit:junit:4.13.1'
+     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'io.github.resilience4j:resilience4j-spring-boot2:1.7.1'
+    implementation 'io.github.resilience4j:resilience4j-spring:1.7.1'
+     implementation 'io.micrometer:micrometer-registry-prometheus:1.10.0'
+     implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+     // implementation 'org.springframework.cloud:spring-cloud-starter-config'
+     
+ implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'io.cucumber:cucumber-java:6.8.0'
+    implementation 'io.cucumber:cucumber-spring:6.8.0'
+    testImplementation 'io.cucumber:cucumber-junit:6.8.0'
+    testImplementation 'junit:junit:4.12'
+   // testImplementation 'io.rest-assured:rest-assured:5.3.2' 
+    testImplementation 'com.github.tomakehurst:wiremock:2.27.2' // Use the version that suits your needs
+    // Use the version that suits your needs
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+     testImplementation ('io.rest-assured:rest-assured:5.3.2') {
+        exclude group: 'org.codehaus.groovy', module: 'groovy'
+        exclude group: 'org.apache.groovy', module: 'groovy-xml'
+    }
+}
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

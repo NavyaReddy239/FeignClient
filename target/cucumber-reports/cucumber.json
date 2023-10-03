@@ -1,0 +1,100 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-09-19T08:57:00.865Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1008798400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step.defination.ExampleDefination.setUpWireMock()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Get person data with success",
+        "description": "",
+        "id": "get-person-data;get-person-data-with-success;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 11718400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step.defination.ExampleDefination.tearDownWireMock()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1027418600,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Get Call to url",
+            "match": {
+              "location": "step.defination.ExampleDefination.getCallToUrl()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4498500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Response Code status is validated",
+            "match": {
+              "location": "step.defination.ExampleDefination.responseCodeStatusIsValidated()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5498300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "verify response content type is \"application/json\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"application/json\"",
+                  "offset": 32
+                }
+              ],
+              "location": "step.defination.ExampleDefination.verifyResponseContentTypeIs(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 22931700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "print out the response body to console",
+            "match": {
+              "location": "step.defination.ExampleDefination.printOutTheResponseBodyToConsole()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Get person data",
+    "description": "",
+    "id": "get-person-data",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Example.feature",
+    "tags": []
+  }
+]
